@@ -109,7 +109,7 @@ echo $test->get_meta();
 
 ```
 
-###Emaple 2
+###Example 2
 
 ```php
 
@@ -278,8 +278,8 @@ TO :  http://example.com/sitemap_videos.xml
 ```php
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteRule sitemap_([0-9a-zA-Z]+)_.xml$  test.php?sitemap=$1 [L]
+RewriteRule sitemap_([0-9a-zA-Z]+).xml$  test.php?sitemap=$1 [L]
 </IfModule>
 ```
-
+ 
 Submit Your Sitemap Index to Search Engines
