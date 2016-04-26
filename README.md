@@ -255,7 +255,7 @@ $exmpledb = new mysqli(.. Example :D ..);
 $query = $exmpledb->query("SELECT * ....");
 
 while($row = $query->fecth_assoc()) {
-$xml->add_sitemap($domain.'/video/'.$row['id'], $domain.'/embed/'.$row['id'], $row['thumbnail'], $row['title'], $row['description'], $row['tags'], $row['category']);
+$xml->add_video($domain.'/video/'.$row['id'], $domain.'/embed/'.$row['id'], $row['thumbnail'], $row['title'], $row['description'], $row['tags'], $row['category']);
 }
 
 $xml->header();
