@@ -3,7 +3,7 @@
 /**
  * MetaTags Generator Class
  */ 
-class meta_tag
+class MeaTag
 {
 	protected $meta_tags, $fb_meta, $tw_meta, $gp_meta, $add_meta;
 
@@ -37,37 +37,44 @@ class meta_tag
 			'canonical'   => 'url'
 	)];
 
-/*** Public Functions ***/ 
-
     /**
+     * Add meta.
+     
      * @param string $type
      */ 
-    public function add_meta($type, $array = FALSE) {
+    public function addMeta($type, $array = FALSE) {
     	if (in_array($type, array_keys($this->attr)) && $array !== FALSE) {
     		foreach ($array as $key => $value) {
      			$this->add_meta .= '<meta '.$this->attr[$type][0].'="'.$key.'" '.$this->attr[$type][1].'="'.htmlspecialchars($value).'" />' . PHP_EOL;
     		}
     	}	  
-    }
-
-    public function set_social($array) {
+    } 
+	
+    /**
+     * Set Social.
+     *
+     * @param array
+     */
+    public function setSocial($array) {
     	$this->fb_meta = $this->tw_meta = $this->gp_meta = FALSE;
-    	if (!empty($array['facebook']) && $array['facebook'][0] === true) {
+    	
+	if (!empty($array['facebook']) && $array['facebook'][0] === true) {
     		unset($array['facebook'][0]);
     		$this->fb_meta = $array['facebook'];
     	}
+	    
     	if (!empty($array['twitter']) && $array['twitter'][0] === true) {
     		unset($array['twitter'][0]);
     		$this->tw_meta = $array['twitter'];
     	}
-     	if (!empty($array['gplus']) && $array['gplus'][0] === true) {
+     	
+	if (!empty($array['gplus']) && $array['gplus'][0] === true) {
     		unset($array['gplus'][0]);
     		$this->gp_meta = $array['gplus'];
     	}   	    	
     }
 
-
-  	public function meta_tags($array) {
+  	public function metaTags($array) {
   		$this->meta_tags = '<!-- Meta Tags Start -->' . PHP_EOL;
   		if ($this->add_meta !== null) {
            $this->meta_tags .= $this->add_meta;
@@ -99,10 +106,11 @@ class meta_tag
   		   $this->meta_tags .= '<link href="'.$array['canonical'].'" rel="canonical" />';
   		}
   	}
+	
     /**
      * @return String
      */  
-  	public function get_meta()	{
+  	public function getMeta()	{
   		return $this->meta_tags;
   	}
 
@@ -143,5 +151,4 @@ class meta_tag
         }
      	return $string;
      }
-
-} 
+}
