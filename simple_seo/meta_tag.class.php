@@ -3,7 +3,7 @@
 /**
  * MetaTags Generator Class
  */ 
-class MeaTag
+class MetaTag
 {
 	protected $meta_tags, $fb_meta, $tw_meta, $gp_meta, $add_meta;
 
