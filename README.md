@@ -2,12 +2,12 @@
 Meta Tags &amp; Social Mata and XML Sitemaps PHP Generator for Search Engines
 
 ## Meta Tags Generator PHP
-###Examples
+### Examples
 ```php
 
 require_once 'meta_tag.class.php';
 
-$test = New meta_tag;
+$test = New MetaTag;
 
 // Social Meta config
 /**
@@ -35,7 +35,7 @@ $test = New meta_tag;
  * author : author google + profile Url   (optional)
  * publisher : Website page Url   (optional)
  */ 
-$test->set_social([
+$test->setSocial([
 
 	    'facebook' => [ 
 	       true, 
@@ -64,11 +64,11 @@ $test->set_social([
 * Add a Other meta tags
 * example :
 *
-* $test->add_meta('facebook', array('og:title' => 'Content title here')); // Output : <meta property='og:title' content='Content title here' />
-* $test->add_meta('twitter',  array('twitter:title' => 'Content title here')); //Output :  <meta name='twitter:title' content='Content title here ' />
-* $test->add_meta('gplus',  array('name' => 'Content here')); // Output : <meta itemprop='name' content='Content here' />
-* $test->add_meta('http',  array('Content-Type' => 'text/html; charset=UTF-8')); // Output : <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
-* $test->add_meta('default',  array('generator' => 'php Script')); // Output : <meta name='generator' content='php Script'/>
+* $test->addMeta('facebook', array('og:title' => 'Content title here')); // Output : <meta property='og:title' content='Content title here' />
+* $test->addMeta('twitter',  array('twitter:title' => 'Content title here')); //Output :  <meta name='twitter:title' content='Content title here ' />
+* $test->addMeta('gplus',  array('name' => 'Content here')); // Output : <meta itemprop='name' content='Content here' />
+* $test->addMeta('http',  array('Content-Type' => 'text/html; charset=UTF-8')); // Output : <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+* $test->addMeta('default',  array('generator' => 'php Script')); // Output : <meta name='generator' content='php Script'/>
 */
 
 /**
@@ -93,7 +93,7 @@ $test->set_social([
  * More info : https://support.google.com/webmasters/answer/79812
  * 
  */ 
-$test->meta_tags([
+$test->metaTags([
 	'type' => 'website',
 	'title' => ' Your Page Title',
 	'name' => 'Your Website name',
@@ -105,18 +105,18 @@ $test->meta_tags([
 	'robots' => 'index, follow, noodp',
 ]);
 
-echo $test->get_meta();
+echo $test->getMeta();
 
 ```
 
-###Example 2
+### Example 2
 
 ```php
 
 require_once 'meta_tag.class.php';
-$test2 = New meta_tag;
+$test2 = New MetaTag;
 
-$test2->set_social([
+$test2->setSocial([
 	    'facebook' => [ 
 	       true, 
           'fb:app_id'    => '175467242654492', 
@@ -132,8 +132,8 @@ $test2->set_social([
 			],
     'gplus' => [false] // false Not Generate this 	
 ]); 
-$test2->add_meta('http',  array('Content-Type' => 'text/html; charset=UTF-8'));
-$test2->meta_tags([
+$test2->addMeta('http',  array('Content-Type' => 'text/html; charset=UTF-8'));
+$test2->metaTags([
 	'type' => 'article',
 	'title' => 'page Articel  Title',
 	'name' => 'Website name',
@@ -145,7 +145,7 @@ $test2->meta_tags([
 	'robots' => 'index, follow, noodp'
 ]);
 
-echo $test2->get_meta();
+echo $test2->getMeta();
 ```
 #### Output
 ```html
